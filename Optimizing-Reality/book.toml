@@ -1,0 +1,16 @@
+[book]
+authors = ["Björn K. Holmström"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Optimizing Reality"
+
+[output.html]
+additional-css = ["theme/custom.css"]
+default-theme = "light"
+preferred-dark-theme = "navy"
+git-repository-url = "your-repo-url"
+git-repository-icon = "fa-github"
+
+[output.html.print]
+enable = true    # Enable PDF generation

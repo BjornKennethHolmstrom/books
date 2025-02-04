@@ -1,0 +1,68 @@
+\documentclass[12pt, a4paper]{book}
+\usepackage{graphicx}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+% Fix for tight lists
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}%
+  \setlength{\parskip}{0pt}}
+
+% Fix for pandocbounded
+\newcommand{\pandocbounded}[1]{#1}
+
+% Better line breaking and spacing
+\usepackage{microtype}
+\usepackage{ragged2e}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.2ex plus 0.5ex minus 0.2ex}
+
+% Adjust geometry for proper header height
+\geometry{margin=1.2in, top=1.5in, headheight=27.5pt}
+
+% Custom Header & Footer
+\pagestyle{fancy}
+\fancyhead[L]{\leftmark} % Left page header = Chapter title
+\fancyhead[R]{\rightmark} % Right page header = Section title
+\fancyfoot[C]{\thepage} % Center footer = Page number
+
+% Custom title formatting
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptername\ \thechapter}{20pt}{\Huge}
+
+% Fix for overfull boxes
+\tolerance=1000
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% Title metadata
+\title{$title$}
+\author{$author$}
+\date{$date$}
+
+\begin{document}
+% Set header height after document begins
+\setlength{\headheight}{27.5pt}
+
+% Book Cover
+\begin{titlepage}
+    \centering
+    \vspace*{0cm}
+    \includegraphics[width=\textwidth]{book-cover.pdf}
+\end{titlepage}
+
+% Frontmatter
+\frontmatter
+\maketitle
+
+% Mainmatter
+\mainmatter
+
+$body$
+
+\end{document}
